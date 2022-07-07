@@ -1,0 +1,42 @@
+#
+clear
+echo -e "\E[44;1;37m    ATUALIZAR O Painel 4G     \E[0m"
+echo ""
+echo -e "                                \033[1;31mBy @Couty_SSH\033[1;36m"
+echo -e "   Painel 4G" | figlet 
+echo -e "                               \033[1;31mPainel 4G\033[1;36m"
+echo ""
+
+echo -e "\n\033[1;36m  INICIANDO ATUALIZACAO PODE DEMORAR\033[1;33m"
+cd /var/www/html/
+fun_atualizando () {
+    wget https://github.com/vpn-ssh/PWEB4G/archive/refs/heads/main.zip > /dev/null 2>&1
+sleep 1
+unzip main.zip > /dev/null 2>&1
+rm -rf main.zip index.html > /dev/null 2>&1
+service apache2 restart
+}
+# 
+echo -e "\n\033[1;36m  FINALIZANDO ATUALIZACAO\033[1;33m"
+fun_finalizando () {
+service apache2 restart
+clear
+
+sleep 1
+service apache2 restart
+}
+fun_bar 'fun_finalizando'
+clear
+echo ""
+#
+clear
+IP=$(wget -qO- ipv4.icanhazip.com)
+clear
+echo -e "\E[44;1;37m    ATUALIZACAO FINALIZADA Painel 4G \E[0m"
+echo -e "   Painel-SSH " | figlet
+echo -e "      4G" | figlet
+echo -e "                 \033[1;31mBy @Couty_SSH\033[1;36m"
+echo ""
+echo -e "\033[1;36m SEU PAINEL:\033[1;37m http://$IP/\033[0m"
+echo -e "\033[1;36m USUARIO E SENHA:\033[1;37m msm do painel 4G\033[0m"
+echo ""
