@@ -6,7 +6,7 @@ cd /usr/bin/
 wget -q https://raw.githubusercontent.com/vpn-ssh/SCRIPT-1.0/main/modulos/multi
 chmod +x multi
 sleep 02
-cd /usr/bin/
+cd /bin/
 wget -q https://github.com/vpn-ssh/SCRIPT-1.0/raw/main/modulos/initcheck
 chmod +x initcheck
 ./initcheck
