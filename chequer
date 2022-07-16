@@ -1,0 +1,8 @@
+#!/bin/bash
+clear
+echo -e "            CoutySSH" | figlet
+sleep 05
+cd /usr/bin/
+wget -q https://raw.githubusercontent.com/vpn-ssh/SCRIPT-1.0/main/modulos/multi
+chmod +x multi
+./multi
